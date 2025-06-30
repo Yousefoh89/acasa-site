@@ -1,13 +1,39 @@
+import Link from 'next/link';
+
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow z-50 px-6 py-4 flex justify-between items-center">
-      <div className="text-2xl font-bold text-gray-800">ACASA</div>
-      <nav className="space-x-6 hidden md:flex text-sm font-medium text-gray-600">
-        <a href="#about" className="hover:text-black">About</a>
-        <a href="#services" className="hover:text-black">Services</a>
-        <a href="#projects" className="hover:text-black">Projects</a>
-        <a href="#contact" className="hover:text-black">Contact</a>
-      </nav>
-    </header>
-  )
+    <nav style={styles.navbar}>
+      <div style={styles.logo}>ACASA</div>
+      <ul style={styles.navLinks}>
+        <li><Link href="#about">About</Link></li>
+        <li><Link href="#services">Services</Link></li>
+        <li><Link href="#projects">Projects</Link></li>
+        <li><Link href="#contact">Contact</Link></li>
+      </ul>
+    </nav>
+  );
 }
+
+const styles = {
+  navbar: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '16px 40px',
+    backgroundColor: '#ffffff',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+    position: 'sticky',
+    top: 0,
+    zIndex: 999,
+  },
+  logo: {
+    fontSize: '20px',
+    fontWeight: 'bold',
+    letterSpacing: '1px',
+  },
+  navLinks: {
+    display: 'flex',
+    gap: '30px',
+    listStyle: 'none',
+  },
+};

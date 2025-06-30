@@ -1,9 +1,19 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white text-center py-8 mt-16">
-      <div className="text-sm">
-        &copy; {new Date().getFullYear()} ACASA Real Estate. All rights reserved.
-      </div>
+    <footer style={styles.footer}>
+      <p style={styles.text}>© 2025 ACASA Real Estate. All rights reserved.</p>
     </footer>
-  )
+  );
 }
+
+const styles = {
+  footer: {
+    backgroundColor: '#1a1a1a',
+    padding: '24px',
+    textAlign: 'center',
+  },
+  text: {
+    color: '#f2f2f2',
+    fontSize: '14px',
+  },
+};
